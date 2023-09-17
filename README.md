@@ -1,8 +1,8 @@
-# Mapping Doc Maven Plugin
+# MapStruct Doc Maven Plugin
 
 :warning: **WORK IN PROGRESS !!!**
 
-The mapping-doc Plugin generate mapping doc for the specified project (csv,
+The mapstruct-doc Plugin generate mapping doc for the specified project (csv,
 markdown or asciidoc).
 
 Content:
@@ -17,7 +17,7 @@ Content:
 
 ## Introduction
 
-The mapping-doc Plugin generate mapping doc for the specified project (CSV,
+The MapStruct Doc Plugin generate mapping doc for the specified project (CSV,
 Markdown or AsciiDoc).
 
 (TODO: Java to CSV image)
@@ -38,8 +38,8 @@ section of your pom.xml, as shown in the following example:
   <build>
     <plugins>
       <plugin>
-        <groupId>com.damienfremont.mapping</groupId>
-        <artifactId>mapping-doc-maven-plugin</artifactId>
+        <groupId>com.damienfremont.mapstructdoc</groupId>
+        <artifactId>mapstruct-doc-maven-plugin</artifactId>
       </plugin>
     </plugins>
   </build>
@@ -49,34 +49,33 @@ section of your pom.xml, as shown in the following example:
 And execute any of the following commands:
 
 ```bash
-mvn com.damienfremont.mapping:mapping-doc-maven-plugin:mapstruct
-mvn com.damienfremont.mapping:mapping-doc-maven-plugin:mapstruct-csv
-mvn com.damienfremont.mapping:mapping-doc-maven-plugin:mapstruct-text
-mvn com.damienfremont.mapping:mapping-doc-maven-plugin:mapstruct-markdown
-mvn com.damienfremont.mapping:mapping-doc-maven-plugin:mapstruct-html
+mvn com.damienfremont.mapstructdoc:mapstruct-doc-maven-plugin:mapstruct-doc
 ```
 
 ## Features
 
 |      Feature       | State | Note |
 |:------------------:|------:|-----:|
-|   Scan MapStruct   |   :x: |      |
+|       Maven        |   :x: |      |
 |    Scan Javadoc    |   :x: |      |
-|  Scan SpringBatch  |   :x: |      |
 |    Generate CSV    |   :x: |      |
 | Generate     Text  |   :x: |      |
 | Generate  Markdown |   :x: |      |
 |   Generate  HTML   |   :x: |      |
 | Generate  AsciiDoc |   :x: |      |
 |     maven-site     |   :x: |      |
+|       Gradle       |   :x: |      |
 
 ## External links
 
 - [mapstruct.org](https://mapstruct.org/)
 - stackoverflow.com
     - ["Generate documentation from Mapstruct code ?"](https://stackoverflow.com/questions/74796733/generate-documentation-from-mapstruct-code)
-- spring.io
+- base
     - [maven-plugin (README layout)](https://docs.spring.io/spring-boot/docs/current/maven-plugin/reference/htmlsingle/)
+    - [mojo-executor (project layout)](https://github.com/mojo-executor/mojo-executor)
+    - [maven-compiler (tests layout)](https://github.com/apache/maven-compiler-plugin)
+    - [enunciate (gradle plugin)](https://github.com/stoicflame/enunciate-gradle)
 
 ## License
 
