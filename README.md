@@ -5,6 +5,10 @@
 The mapstruct-doc Plugin generate mapping doc for the specified project (csv,
 markdown or asciidoc).
 
+Liked some of my work? Buy me a coffee (or more likely a beer)
+
+<a href="https://www.buymeacoffee.com/damienfremont" target="_blank"><img src="https://bmc-cdn.nyc3.digitaloceanspaces.com/BMC-button-images/custom_images/orange_img.png" alt="Buy Me A Coffee" style="height: auto !important;width: auto !important;" ></a>
+
 Content:
 
 1. [Introduction](#introduction)
