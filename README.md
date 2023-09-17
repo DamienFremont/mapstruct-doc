@@ -24,9 +24,7 @@ Content:
 The MapStruct Doc Plugin generate mapping doc for the specified project (CSV,
 Markdown or AsciiDoc).
 
-(TODO: Java to CSV image)
-
-TODO: buy me a beer
+![alt text](./docs/diagrams.jpg)
 
 ## Usage
 

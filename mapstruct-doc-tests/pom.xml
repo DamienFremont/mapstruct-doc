@@ -38,4 +38,8 @@ SOFTWARE.
 
   <name>Mapstruct Doc Tests</name>
 
+  <modules>
+    <module>usage-example-mapstructin2min</module>
+  </modules>
+
 </project>

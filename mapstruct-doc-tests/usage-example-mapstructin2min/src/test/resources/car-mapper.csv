@@ -1,0 +1,5 @@
+SOURCE,,,TARGET,,,TRANSFORMATION RULE,,,
+FIELD,TYPE,NOTE,FIELDS,TYPE,NOTE,DIRECT MAPPING,DEFAULT VALUE,LOGIC,FUNCTION
+make,String,,make,String,,,,,
+numberOfSeats,Integer,,seatCount,Integer,,,,,
+type,Enum,,type,Enum,,,,,
