@@ -75,7 +75,7 @@ mvn com.damienfremont.mapstructdoc:mapstruct-doc-maven-plugin:mapstruct-doc
 - [mapstruct.org](https://mapstruct.org/)
 - stackoverflow.com
     - ["Generate documentation from Mapstruct code ?"](https://stackoverflow.com/questions/74796733/generate-documentation-from-mapstruct-code)
-- base
+- resources
     - [maven-plugin (README layout)](https://docs.spring.io/spring-boot/docs/current/maven-plugin/reference/htmlsingle/)
     - [mojo-executor (project layout)](https://github.com/mojo-executor/mojo-executor)
     - [maven-compiler (tests layout)](https://github.com/apache/maven-compiler-plugin)
@@ -84,3 +84,7 @@ mvn com.damienfremont.mapstructdoc:mapstruct-doc-maven-plugin:mapstruct-doc
 ## License
 
 [MIT License](https://opensource.org/license/mit/)
+
+# Contributing
+
+Want to contribute ? Please contact the [authors](mailto:damien.fremont@gmail.com).
