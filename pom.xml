@@ -61,6 +61,7 @@ SOFTWARE.
   <properties>
     <maven.version>3.2.5</maven.version>
     <java.version>8</java.version>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
 
   <modules>
