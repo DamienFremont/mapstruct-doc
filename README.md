@@ -1,5 +1,16 @@
 # MapStruct Doc Maven Plugin
 
+<p align="center">
+    <a href="https://circleci.com/gh/badges/shields/tree/master">
+        <img src="https://img.shields.io/circleci/project/github/badges/shields/master" alt="build status"></a>
+    <a href="https://coveralls.io/github/badges/shields">
+        <img src="https://img.shields.io/coveralls/github/badges/shields"
+            alt="coverage"></a>
+    <a href="https://twitter.com/intent/follow?screen_name=Damien_Fremont">
+        <img src="https://img.shields.io/twitter/follow/Damien_Fremont?style=social&logo=X"
+            alt="follow on Twitter"></a>
+</p>
+
 :warning: **WORK IN PROGRESS !!!**
 
 Mapstruct-doc plugin generate mapping documentation for your project (csv,
@@ -90,3 +101,5 @@ mvn com.damienfremont.mapstructdoc:mapstruct-doc-maven-plugin:mapstruct-doc
 
 Want to contribute ? Please contact
 the [authors](mailto:damien.fremont@gmail.com).
+
+![GitHub Contributors Image](https://contrib.rocks/image?repo=DamienFremont/mapstruct-doc-plugin)
