@@ -28,9 +28,9 @@ SOFTWARE.
   <modelVersion>4.0.0</modelVersion>
 
   <parent>
-    <groupId>com.damienfremont.mapstructdoc</groupId>
+    <groupId>com.damienfremont.mapstruct</groupId>
     <artifactId>mapstruct-doc-tests</artifactId>
-    <version>1.0.0-SNAPSHOT</version>
+    <version>1.5.5-SNAPSHOT</version>
   </parent>
 
   <artifactId>usage-example-mapstructin2min</artifactId>
@@ -40,20 +40,33 @@ SOFTWARE.
   <description>"MapStruct in 2 Minutes" https://mapstruct.org/</description>
 
   <properties>
-    <org.mapstruct.version>1.5.5.Final</org.mapstruct.version>
     <lombok.version>1.18.28</lombok.version>
   </properties>
 
   <dependencies>
+    <!-- PROJECT -->
+    <dependency>
+      <groupId>${project.groupId}</groupId>
+      <artifactId>mapstruct-doc-processor</artifactId>
+      <version>${project.version}</version>
+    </dependency>
+    <!-- THIRD-PARTY -->
     <dependency>
       <groupId>org.mapstruct</groupId>
       <artifactId>mapstruct</artifactId>
       <version>${org.mapstruct.version}</version>
     </dependency>
+    <!-- TEST -->
     <dependency>
       <groupId>org.junit.jupiter</groupId>
       <artifactId>junit-jupiter-engine</artifactId>
       <version>5.9.2</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.assertj</groupId>
+      <artifactId>assertj-core</artifactId>
+      <version>3.24.2</version>
       <scope>test</scope>
     </dependency>
     <dependency>
@@ -85,7 +98,17 @@ SOFTWARE.
               <version>${org.mapstruct.version}</version>
             </path>
             <!-- other annotation processors -->
+            <path>
+              <groupId>${project.groupId}</groupId>
+              <artifactId>mapstruct-doc-processor</artifactId>
+              <version>${project.version}</version>
+            </path>
           </annotationProcessorPaths>
+<!--          <annotationProcessors>-->
+<!--            <annotationProcessor>-->
+<!--              com.damienfremont.mapstruct.MappingDocProcessor-->
+<!--            </annotationProcessor>-->
+<!--          </annotationProcessors>-->
         </configuration>
       </plugin>
     </plugins>

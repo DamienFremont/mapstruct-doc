@@ -1,24 +1,21 @@
-package com.damienfremont.mapstructdoc;
+package com.damienfremont.mapstruct;
 
-import com.damienfremont.mapstructdoc.source.CarSourcePojo;
-import com.damienfremont.mapstructdoc.target.CarTargetPogo;
+import com.damienfremont.mapstruct.source.Car;
+import com.damienfremont.mapstruct.target.CarDto;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
-import org.mapstruct.Mappings;
 import org.mapstruct.factory.Mappers;
 
-import static org.mapstruct.ReportingPolicy.IGNORE;
-
-@Mapper(unmappedTargetPolicy = IGNORE)
+/**
+ * source: https://mapstruct.org/#get-started
+ */
+@Mapper
 public interface CarMapper {
 
   CarMapper INSTANCE = Mappers.getMapper(CarMapper.class);
 
-  @Mappings({
-          @Mapping(source = "make", target = "make"),
-          @Mapping(source = "numberOfSeats", target = "seatCount"),
-          @Mapping(source = "type", target = "type")
-  })
-  CarTargetPogo carToCarDto(CarSourcePojo carSourcePojo);
-
+  @Mapping(source = "numberOfSeats", target = "seatCount")
+  CarDto carToCarDto(Car car);
 }
+
+

@@ -4,14 +4,17 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+/**
+ * source: https://mapstruct.org/#get-started
+ */
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class CarSourcePojo {
+public class Car {
 
   private String make;
   private int numberOfSeats;
-  private CarSourceType type;
+  private CarType type;
 
   //constructor, getters, setters etc.
 }

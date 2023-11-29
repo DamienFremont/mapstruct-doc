@@ -1,30 +1,29 @@
-package com.damienfremont.mapstructdoc;
+package com.damienfremont.mapstruct;
 
-import com.damienfremont.mapstructdoc.source.CarSourcePojo;
-import com.damienfremont.mapstructdoc.target.CarTargetPogo;
+import com.damienfremont.mapstruct.source.Car;
+import com.damienfremont.mapstruct.source.CarType;
+import com.damienfremont.mapstruct.target.CarDto;
 import org.junit.jupiter.api.Test;
 
-import static com.damienfremont.mapstructdoc.source.CarSourceType.SEDAN;
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.assertj.core.api.Assertions.assertThat;
 
+/**
+ * source: https://mapstruct.org/#get-started
+ */
 class CarMapperTest {
 
-  CarMapper classUnderTest = CarMapper.INSTANCE;
-
-  @Test // TODO: @ParameterizedTest(..."param.json"..."expected.json"...)
+  @Test
   public void shouldMapCarToDto() {
-    // GIVEN
-    CarSourcePojo arg = new CarSourcePojo( // TODO: readJson(...))
-            "Morris",
-            5,
-            SEDAN);
-    // WHEN
-    CarTargetPogo res = classUnderTest.carToCarDto(arg);
-    // THEN
-    assertNotNull(res);
-    assertEquals("Morris", res.getMake()); // TODO: assertObjectEquals(res, readJson(...))
-    assertEquals(5, res.getSeatCount());
-    assertEquals("SEDAN", res.getType());
+    //given
+    Car car = new Car("Morris", 5, CarType.SEDAN);
+
+    //when
+    CarDto carDto = CarMapper.INSTANCE.carToCarDto(car);
+
+    //then
+    assertThat(carDto).isNotNull();
+    assertThat(carDto.getMake()).isEqualTo("Morris");
+    assertThat(carDto.getSeatCount()).isEqualTo(5);
+    assertThat(carDto.getType()).isEqualTo("SEDAN");
   }
 }

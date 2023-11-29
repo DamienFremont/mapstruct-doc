@@ -1,5 +1,8 @@
 package com.damienfremont.mapstruct.source;
 
-public enum CarSourceType {
+/**
+ * source: https://mapstruct.org/#get-started
+ */
+public enum CarType {
   SEDAN
 }

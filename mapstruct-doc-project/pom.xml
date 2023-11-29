@@ -28,9 +28,9 @@ SOFTWARE.
   <modelVersion>4.0.0</modelVersion>
 
   <parent>
-    <groupId>com.damienfremont.mapstructdoc</groupId>
+    <groupId>com.damienfremont.mapstruct</groupId>
     <artifactId>mapstruct-doc-parent</artifactId>
-    <version>1.0.0-SNAPSHOT</version>
+    <version>1.5.5-SNAPSHOT</version>
   </parent>
 
   <artifactId>mapstruct-doc-project</artifactId>
@@ -39,8 +39,7 @@ SOFTWARE.
   <name>Mapstruct Doc Project</name>
 
   <modules>
-    <module>mapstruct-doc</module>
-    <module>mapstruct-doc-maven-plugin</module>
+    <module>mapstruct-doc-processor</module>
   </modules>
 
 </project>
