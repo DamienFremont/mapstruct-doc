@@ -1,4 +1,4 @@
-package com.damienfremont.mapstructdoc.source;
+package com.damienfremont.mapstruct.source;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
