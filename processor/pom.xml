@@ -31,15 +31,39 @@ SOFTWARE.
     <groupId>com.damienfremont.mapstruct</groupId>
     <artifactId>mapstruct-doc-parent</artifactId>
     <version>1.5.5-SNAPSHOT</version>
+    <relativePath>../parent/pom.xml</relativePath>
   </parent>
 
-  <artifactId>mapstruct-doc-project</artifactId>
-  <packaging>pom</packaging>
+  <artifactId>mapstruct-doc-processor</artifactId>
+  <packaging>jar</packaging>
 
-  <name>Mapstruct Doc Project</name>
+  <name>Mapstruct Doc Processor</name>
 
-  <modules>
-    <module>mapstruct-doc-processor</module>
-  </modules>
+  <dependencies>
+    <dependency>
+      <groupId>org.mapstruct</groupId>
+      <artifactId>mapstruct</artifactId>
+      <version>${org.mapstruct.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>com.google.auto.service</groupId>
+      <artifactId>auto-service</artifactId>
+      <version>1.1.1</version>
+      <optional>true</optional>
+    </dependency>
+  </dependencies>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <configuration>
+          <source>8</source>
+          <target>8</target>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
 
 </project>

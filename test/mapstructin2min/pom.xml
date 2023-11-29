@@ -33,41 +33,19 @@ SOFTWARE.
     <version>1.5.5-SNAPSHOT</version>
   </parent>
 
-  <artifactId>usage-example-mapstructin2min</artifactId>
+  <artifactId>mapstructin2min</artifactId>
   <packaging>jar</packaging>
 
   <name>Mapstruct Doc Tests - usage-example-mapstructin2min</name>
   <description>"MapStruct in 2 Minutes" https://mapstruct.org/</description>
 
   <properties>
-    <lombok.version>1.18.28</lombok.version>
   </properties>
 
   <dependencies>
-    <!-- THIRD-PARTY -->
     <dependency>
       <groupId>org.mapstruct</groupId>
       <artifactId>mapstruct</artifactId>
-      <version>${org.mapstruct.version}</version>
-    </dependency>
-    <!-- TEST -->
-    <dependency>
-      <groupId>org.junit.jupiter</groupId>
-      <artifactId>junit-jupiter-engine</artifactId>
-      <version>5.9.2</version>
-      <scope>test</scope>
-    </dependency>
-    <dependency>
-      <groupId>org.assertj</groupId>
-      <artifactId>assertj-core</artifactId>
-      <version>3.24.2</version>
-      <scope>test</scope>
-    </dependency>
-    <dependency>
-      <groupId>org.projectlombok</groupId>
-      <artifactId>lombok</artifactId>
-      <version>${lombok.version}</version>
-      <scope>provided</scope>
     </dependency>
   </dependencies>
 

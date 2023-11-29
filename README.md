@@ -29,7 +29,7 @@ Content:
 The MapStruct Doc Plugin generate mapping doc for the specified project (CSV,
 Markdown or AsciiDoc).
 
-![alt text](./docs/diagrams.jpg)
+![alt text](documentation/diagrams.jpg)
 
 ## Get Started
 

@@ -27,47 +27,20 @@ SOFTWARE.
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
-  <groupId>com.damienfremont.mapstruct</groupId>
-  <artifactId>mapstruct-doc-parent</artifactId>
-  <version>1.5.5-SNAPSHOT</version>
+  <parent>
+    <groupId>com.damienfremont.mapstruct</groupId>
+    <artifactId>mapstruct-doc-parent</artifactId>
+    <version>1.5.5-SNAPSHOT</version>
+    <relativePath>parent/pom.xml</relativePath>
+  </parent>
+
+  <artifactId>mapstruct-doc-aggregator</artifactId>
   <packaging>pom</packaging>
-
-  <name>Mapstruct Doc Parent</name>
-  <description>The mapstruct-doc Plugin generate mapping doc for the specified
-    project (csv, markdown or asciidoc).
-  </description>
-  <inceptionYear>2023</inceptionYear>
-
-  <contributors>
-    <contributor>
-      <name>Damien FREMONT</name>
-    </contributor>
-  </contributors>
-
-  <prerequisites>
-    <maven>${maven.version}</maven>
-  </prerequisites>
-
-  <scm>
-    <connection>
-      scm:git:https://github.com/damienfremont/mapstruct-doc-maven-plugin.git
-    </connection>
-    <developerConnection>
-      scm:git:https://github.com/damienfremont/mapstruct-doc-maven-plugin.git
-    </developerConnection>
-    <url>https://github.com/damienfremont/mapstruct-doc-maven-plugin/</url>
-  </scm>
-
-  <properties>
-    <maven.version>3.2.5</maven.version>
-    <java.version>8</java.version>
-    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <org.mapstruct.version>1.5.5.Final</org.mapstruct.version>
-  </properties>
+  <name>MapStruct Doc Aggregator</name>
 
   <modules>
-    <module>mapstruct-doc-project</module>
-    <module>mapstruct-doc-tests</module>
+    <module>processor</module>
+    <module>test</module>
   </modules>
 
 </project>
