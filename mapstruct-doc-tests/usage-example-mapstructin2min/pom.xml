@@ -44,12 +44,6 @@ SOFTWARE.
   </properties>
 
   <dependencies>
-    <!-- PROJECT -->
-    <dependency>
-      <groupId>${project.groupId}</groupId>
-      <artifactId>mapstruct-doc-processor</artifactId>
-      <version>${project.version}</version>
-    </dependency>
     <!-- THIRD-PARTY -->
     <dependency>
       <groupId>org.mapstruct</groupId>
@@ -104,11 +98,6 @@ SOFTWARE.
               <version>${project.version}</version>
             </path>
           </annotationProcessorPaths>
-<!--          <annotationProcessors>-->
-<!--            <annotationProcessor>-->
-<!--              com.damienfremont.mapstruct.MappingDocProcessor-->
-<!--            </annotationProcessor>-->
-<!--          </annotationProcessors>-->
         </configuration>
       </plugin>
     </plugins>

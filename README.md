@@ -1,15 +1,8 @@
 # MapStruct Doc Maven Plugin
 
-<p align="center">
-    <a href="https://circleci.com/gh/badges/shields/tree/master">
-        <img src="https://img.shields.io/circleci/project/github/badges/shields/master" alt="build status"></a>
-    <a href="https://coveralls.io/github/badges/shields">
-        <img src="https://img.shields.io/coveralls/github/badges/shields"
-            alt="coverage"></a>
-    <a href="https://twitter.com/intent/follow?screen_name=Damien_Fremont">
-        <img src="https://img.shields.io/twitter/follow/Damien_Fremont?style=social&logo=X"
-            alt="follow on Twitter"></a>
-</p>
+[![Latest Version](https://img.shields.io/badge/Latest%20Version-1.5.5-orange.svg)](https://search.maven.org/search?q=g:org.mapstruct%20AND%20v:1.*.Final)
+[![License](https://img.shields.io/badge/License-MIT-yellowgreen.svg)](https://github.com/mapstruct/mapstruct/blob/main/LICENSE.txt)
+[![Follow](https://img.shields.io/twitter/follow/Damien_Fremont?style=social&logo=X)](https://twitter.com/intent/follow?screen_name=Damien_Fremont)
 
 :warning: **WORK IN PROGRESS !!!**
 
@@ -52,9 +45,25 @@ your pom.xml, as shown in the following example:
   <build>
     <plugins>
       <plugin>
-        <groupId>com.damienfremont.mapstructdoc</groupId>
-        <artifactId>mapstruct-doc-maven-plugin</artifactId>
-        <version>1.0.0-SNAPSHOT</version>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.8.1</version>
+        <configuration>
+          <source>1.8</source> <!-- depending on your project -->
+          <target>1.8</target> <!-- depending on your project -->
+          <annotationProcessorPaths>
+            <path>
+              <groupId>org.mapstruct</groupId>
+              <artifactId>mapstruct-processor</artifactId>
+              <version>${org.mapstruct.version}</version>
+            </path>
+            <path>
+              <groupId>com.damienfremont.mapstruct</groupId>
+              <artifactId>mapstruct-doc-processor</artifactId>
+              <version>1.5.5-SNAPSHOT</version>
+            </path>
+          </annotationProcessorPaths>
+        </configuration>
       </plugin>
     </plugins>
   </build>
@@ -64,14 +73,14 @@ your pom.xml, as shown in the following example:
 And execute any of the following commands:
 
 ```bash
-mvn com.damienfremont.mapstructdoc:mapstruct-doc-maven-plugin:mapstruct-doc
+mvn clean compile
 ```
 
 ## Features
 
 |      Feature       | State | Note |
 |:------------------:|------:|-----:|
-| maven              |   :x: |      |
+| maven              |   :heavy_check_mark: |      |
 | scan-javadoc       |   :x: |      |
 | generate-csv       |   :x: |      |
 | generate-text      |   :x: |      |
@@ -92,6 +101,11 @@ mvn com.damienfremont.mapstructdoc:mapstruct-doc-maven-plugin:mapstruct-doc
     - [mojo-executor (project layout)](https://github.com/mojo-executor/mojo-executor)
     - [maven-compiler (tests layout)](https://github.com/apache/maven-compiler-plugin)
     - [enunciate (gradle plugin)](https://github.com/stoicflame/enunciate-gradle)
+- hannesdorfmann.com
+    - [Annotation Processing 101: post](http://hannesdorfmann.com/annotation-processing/annotationprocessing101/)
+    - [Annotation Processing 101: github](https://github.com/sockeqwe/annotationprocessing101)
+- baeldung.com
+    - [Java Annotation Processing and Creating a Builder](https://www.baeldung.com/java-annotation-processing-builder)
 
 ## License
 
