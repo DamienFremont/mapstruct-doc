@@ -1,4 +1,4 @@
-# MapStruct Doc Maven Plugin
+# MapStruct Doc - Maven Plugin
 
 [![Latest Version](https://img.shields.io/badge/Latest%20Version-1.5.5-orange.svg)](https://search.maven.org/search?q=g:org.mapstruct%20AND%20v:1.*.Final)
 [![License](https://img.shields.io/badge/License-MIT-yellowgreen.svg)](https://github.com/mapstruct/mapstruct/blob/main/LICENSE.txt)
@@ -6,42 +6,46 @@
 
 :warning: **WORK IN PROGRESS !!!**
 
-Mapstruct-doc plugin generate mapping documentation for your project (csv,
-markdown or asciidoc).
-
 Liked some of my work? Buy me a coffee (or more likely a beer)
 
 <a href="https://www.buymeacoffee.com/damienfremont" target="_blank"><img src="https://bmc-cdn.nyc3.digitaloceanspaces.com/BMC-button-images/custom_images/orange_img.png" alt="Buy Me A Coffee" style="height: auto !important;width: auto !important;" ></a>
 
-Content:
-
-1. [Introduction](#introduction)
-2. [Get Started](#get-started)
-    1. [Maven](#maven)
-3. [Features](#features)
-4. [External links](#external-links)
-5. [License](#license)
+* [What is MapStruct Doc?](#what-is-mapstruct-doc)
+* [Requirements](#requirements)
+* [Using MapStruct Doc](#using-mapstruct-doc)
+    * [Maven](#maven)
+* [Documentation and getting help](#documentation-and-getting-help)
+* [Licensing](#licensing)
+* [links](#links)
 
 ---
 
-## Introduction
+## What is MapStruct Doc?
 
-The MapStruct Doc Plugin generate mapping doc for the specified project (CSV,
-Markdown or AsciiDoc).
+MapStruct Doc is a
+Java [annotation processor](https://docs.oracle.com/javase/6/docs/technotes/guides/apt/index.html)
+for the generation of documentation for mapping interface (CSV, Markdown or
+AsciiDoc).
 
 ![alt text](documentation/diagrams.jpg)
 
-## Get Started
+At compile time MapStruct will generate a file for each interface.
+
+## Requirements
+
+MapStruct Doc requires Java 1.8 or later.
+
+## Using MapStruct Doc
 
 ### Maven
 
-To use the Maven Plugin, include the appropriate XML in the plugins section of
-your pom.xml, as shown in the following example:
+For Maven-based projects, add the following to your POM file in order to use
+MapStruct Doc:
 
 ```xml
-<!-- pom.xml -->
+
 <project>
-  <!-- ... -->
+  ...
   <build>
     <plugins>
       <plugin>
@@ -76,7 +80,7 @@ And execute any of the following commands:
 mvn clean compile
 ```
 
-## Features
+## Documentation and getting help
 
 |      Feature       | State | Note |
 |:------------------:|------:|-----:|
@@ -90,7 +94,18 @@ mvn clean compile
 | maven-site         |   :x: |      |
 | gradle             |   :x: |      |
 
-## External links
+## Licensing
+
+[MIT License](https://opensource.org/license/mit/)
+
+## Contributing
+
+Want to contribute ? Please contact
+the [authors](mailto:damien.fremont@gmail.com).
+
+![GitHub Contributors Image](https://contrib.rocks/image?repo=DamienFremont/mapstruct-doc-plugin)
+
+## Links
 
 - mapstruct.org
     - [ide-support](https://mapstruct.org/documentation/ide-support/)
@@ -106,14 +121,3 @@ mvn clean compile
     - [Annotation Processing 101: github](https://github.com/sockeqwe/annotationprocessing101)
 - baeldung.com
     - [Java Annotation Processing and Creating a Builder](https://www.baeldung.com/java-annotation-processing-builder)
-
-## License
-
-[MIT License](https://opensource.org/license/mit/)
-
-## Contributing
-
-Want to contribute ? Please contact
-the [authors](mailto:damien.fremont@gmail.com).
-
-![GitHub Contributors Image](https://contrib.rocks/image?repo=DamienFremont/mapstruct-doc-plugin)
