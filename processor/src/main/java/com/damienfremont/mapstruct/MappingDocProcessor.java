@@ -1,55 +1,46 @@
 package com.damienfremont.mapstruct;
 
+import com.damienfremont.mapstruct.file.CsvFileBuilder;
+import com.damienfremont.mapstruct.mapper.ModelMapper;
+import com.damienfremont.mapstruct.model.MapperModel;
 import com.google.auto.service.AutoService;
-import org.mapstruct.Mapper;
 
 import javax.annotation.processing.*;
-import javax.lang.model.element.Element;
 import javax.lang.model.element.TypeElement;
 import javax.tools.Diagnostic;
-import javax.tools.FileObject;
-import javax.tools.StandardLocation;
-import java.io.PrintWriter;
 import java.util.Set;
 
-import static java.lang.String.format;
-
 @AutoService(Processor.class)
-@SupportedAnnotationTypes("org.mapstruct.Mapper")
+@SupportedAnnotationTypes({
+        "org.mapstruct.Mapper",
+        "org.mapstruct.Mapping",
+        "org.mapstruct.Mappings",
+})
 public class MappingDocProcessor extends AbstractProcessor {
 
+  ProcessingEnvironment env;
   Messager messager;
-  Filer filer;
 
   @Override
   public synchronized void init(ProcessingEnvironment env) {
-    messager = env.getMessager();
-    filer = env.getFiler();
+    this.env = env;
+    this.messager = env.getMessager();
   }
 
   @Override
   public boolean process(Set<? extends TypeElement> annotations, RoundEnvironment env) {
     try {
-      for (TypeElement annotation : annotations) {
-        Set<? extends Element> annotatedElements = env.getElementsAnnotatedWith(Mapper.class);
-        Element clazz = annotatedElements.stream().findFirst().get();
-        String filename = format("%s.csv", clazz.getSimpleName());
-        System.out.println(filename);
-        FileObject builderFile = filer.createResource(
-                StandardLocation.CLASS_OUTPUT,
-                "",
-                filename);
-        try (PrintWriter out = new PrintWriter(builderFile.openWriter())) {
-          out.print("");
-        }
-      }
+      if (!ModelMapper.isMapper(env))
+        return true;
+      MapperModel model = ModelMapper.toModel(env, this.env);
+      CsvFileBuilder.writeCsvFile(model, this.env);
     } catch (Exception e) {
       error(e);
     }
     return true;
   }
 
-  private void error(Exception e) {
+  void error(Exception e) {
     e.printStackTrace();
     messager.printMessage(Diagnostic.Kind.ERROR, e.getMessage(), null);
   }

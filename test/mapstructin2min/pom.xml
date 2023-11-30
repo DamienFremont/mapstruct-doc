@@ -36,7 +36,7 @@ SOFTWARE.
   <artifactId>mapstructin2min</artifactId>
   <packaging>jar</packaging>
 
-  <name>Mapstruct Doc Tests - usage-example-mapstructin2min</name>
+  <name>Mapstruct Doc Tests - MapStruct in 2 Minutes</name>
   <description>"MapStruct in 2 Minutes" https://mapstruct.org/</description>
 
   <properties>
