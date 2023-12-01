@@ -75,9 +75,9 @@ SOFTWARE.
       </plugin>
       <!-- PROJECT -->
       <plugin>
-        <groupId>${project.groupId}</groupId>
+        <groupId>com.damienfremont.mapstruct</groupId>
         <artifactId>mapstruct-doc-maven-plugin</artifactId>
-        <version>${project.version}</version>
+        <version>1.5.5-SNAPSHOT</version>
         <configuration>
           <include>com.damienfremont.mapstruct.CarMapper</include>
         </configuration>

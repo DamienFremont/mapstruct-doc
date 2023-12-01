@@ -61,13 +61,25 @@ MapStruct Doc:
               <artifactId>mapstruct-processor</artifactId>
               <version>${org.mapstruct.version}</version>
             </path>
-            <path>
-              <groupId>com.damienfremont.mapstruct</groupId>
-              <artifactId>mapstruct-doc-processor</artifactId>
-              <version>1.5.5-SNAPSHOT</version>
-            </path>
           </annotationProcessorPaths>
         </configuration>
+      </plugin>
+      <!-- mapstruct-doc -->
+      <plugin>
+        <groupId>com.damienfremont.mapstruct</groupId>
+        <artifactId>mapstruct-doc-maven-plugin</artifactId>
+        <version>1.5.5-SNAPSHOT</version>
+        <configuration>
+          <include>com.damienfremont.mapstruct.CarMapper</include>
+        </configuration>
+        <executions>
+          <execution>
+            <goals>
+              <goal>generate</goal>
+            </goals>
+            <phase>install</phase>
+          </execution>
+        </executions>
       </plugin>
     </plugins>
   </build>
@@ -77,7 +89,11 @@ MapStruct Doc:
 And execute any of the following commands:
 
 ```bash
-mvn clean compile
+mvn install -DskipTests
+```
+
+```bash
+mvn com.damienfremont.mapstruct:mapstruct-doc-maven-plugin:1.5.5-SNAPSHOT:generate
 ```
 
 ## Documentation and getting help
