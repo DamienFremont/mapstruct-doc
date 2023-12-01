@@ -39,9 +39,6 @@ SOFTWARE.
   <name>Mapstruct Doc Tests - MapStruct in 2 Minutes</name>
   <description>"MapStruct in 2 Minutes" https://mapstruct.org/</description>
 
-  <properties>
-  </properties>
-
   <dependencies>
     <dependency>
       <groupId>org.mapstruct</groupId>
@@ -75,9 +72,9 @@ SOFTWARE.
       </plugin>
       <!-- PROJECT -->
       <plugin>
-        <groupId>com.damienfremont.mapstruct</groupId>
+        <groupId>${project.groupId}</groupId>
         <artifactId>mapstruct-doc-maven-plugin</artifactId>
-        <version>1.5.5-SNAPSHOT</version>
+        <version>${project.version}</version>
         <configuration>
           <include>com.damienfremont.mapstruct.CarMapper</include>
         </configuration>

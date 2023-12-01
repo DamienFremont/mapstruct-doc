@@ -50,31 +50,18 @@ SOFTWARE.
       <version>${project.version}</version>
     </dependency>
     <!-- MAVEN PLUGIN -->
-<!--    <dependency>-->
-<!--      <groupId>org.apache.maven</groupId>-->
-<!--      <artifactId>maven-artifact</artifactId>-->
-<!--      <version>${maven.version}</version>-->
-<!--      <scope>provided</scope>-->
-<!--    </dependency>-->
     <dependency>
       <groupId>org.apache.maven</groupId>
       <artifactId>maven-plugin-api</artifactId>
       <version>${maven.version}</version>
       <scope>provided</scope>
     </dependency>
-<!--    <dependency>-->
-<!--      <groupId>org.apache.maven</groupId>-->
-<!--      <artifactId>maven-model</artifactId>-->
-<!--      <version>${maven.version}</version>-->
-<!--      <scope>provided</scope>-->
-<!--    </dependency>-->
     <dependency>
       <groupId>org.apache.maven</groupId>
       <artifactId>maven-core</artifactId>
       <version>${maven.version}</version>
       <scope>provided</scope>
     </dependency>
-
     <dependency>
       <groupId>org.apache.maven.plugin-tools</groupId>
       <artifactId>maven-plugin-annotations</artifactId>
