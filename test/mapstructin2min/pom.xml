@@ -60,7 +60,8 @@ SOFTWARE.
           <target>1.8</target> <!-- depending on your project -->
           <annotationProcessorPaths>
             <path>
-              <groupId>org.projectlombok</groupId> <!-- IMPORTANT - LOMBOK BEFORE MAPSTRUCT -->
+              <groupId>org.projectlombok
+              </groupId> <!-- IMPORTANT - LOMBOK BEFORE MAPSTRUCT -->
               <artifactId>lombok</artifactId>
               <version>${lombok.version}</version>
             </path>
@@ -69,14 +70,25 @@ SOFTWARE.
               <artifactId>mapstruct-processor</artifactId>
               <version>${org.mapstruct.version}</version>
             </path>
-            <!-- other annotation processors -->
-            <path>
-              <groupId>${project.groupId}</groupId>
-              <artifactId>mapstruct-doc-processor</artifactId>
-              <version>${project.version}</version>
-            </path>
           </annotationProcessorPaths>
         </configuration>
+      </plugin>
+      <!-- PROJECT -->
+      <plugin>
+        <groupId>${project.groupId}</groupId>
+        <artifactId>mapstruct-doc-maven-plugin</artifactId>
+        <version>${project.version}</version>
+        <configuration>
+          <include>com.damienfremont.mapstruct.CarMapper</include>
+        </configuration>
+        <executions>
+          <execution>
+            <goals>
+              <goal>generate</goal>
+            </goals>
+            <phase>install</phase>
+          </execution>
+        </executions>
       </plugin>
     </plugins>
   </build>

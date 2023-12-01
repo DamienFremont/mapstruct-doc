@@ -31,17 +31,21 @@ SOFTWARE.
     <groupId>com.damienfremont.mapstruct</groupId>
     <artifactId>mapstruct-doc-parent</artifactId>
     <version>1.5.5-SNAPSHOT</version>
-    <relativePath>parent/pom.xml</relativePath>
+    <relativePath>../parent/pom.xml</relativePath>
   </parent>
 
-  <artifactId>mapstruct-doc-aggregator</artifactId>
-  <packaging>pom</packaging>
-  <name>MapStruct Doc Aggregator</name>
+  <artifactId>mapstruct-doc-core</artifactId>
+  <packaging>jar</packaging>
 
-  <modules>
-    <module>core</module>
-    <module>maven-plugin</module>
-    <module>test</module>
-  </modules>
+  <name>Mapstruct Doc Core</name>
+
+  <dependencies>
+    <!-- MAPSTRUCT -->
+    <dependency>
+      <groupId>org.mapstruct</groupId>
+      <artifactId>mapstruct</artifactId>
+      <version>${org.mapstruct.version}</version>
+    </dependency>
+  </dependencies>
 
 </project>

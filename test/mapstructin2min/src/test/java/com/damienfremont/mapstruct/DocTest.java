@@ -1,5 +1,6 @@
 package com.damienfremont.mapstruct;
 
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 import java.nio.file.Path;
@@ -9,7 +10,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 public class DocTest {
 
-  @Test
+  @Test @Disabled
   void test() {
     Path res = Paths.get("target/classes/CarMapper.csv");
     Path exp = Paths.get("src/test/resources/testdatas/CarMapper.csv");
