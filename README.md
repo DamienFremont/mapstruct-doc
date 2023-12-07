@@ -1,6 +1,6 @@
-# MapStruct Doc - Maven Plugin
+# MapStruct Doc - Maven & Gradle Plugin
 
-[![License](https://img.shields.io/badge/License-Apache%202.0-yellowgreen.svg)](https://github.com/DamienFremont/mapstruct-doc/blob/main/LICENSE.txt)
+[![License](https://img.shields.io/badge/License-Apache%202.0-yellowgreen.svg)](https://github.com/DamienFremont/mapstruct-doc/blob/main/LICENSE)
 [![Follow](https://img.shields.io/twitter/follow/Damien_Fremont?style=social&logo=X)](https://twitter.com/intent/follow?screen_name=Damien_Fremont)
 
 :warning: **WORK IN PROGRESS !!!**
@@ -9,13 +9,12 @@ Liked some of my work? Buy me a coffee (or more likely a beer)
 
 <a href="https://www.buymeacoffee.com/damienfremont" target="_blank"><img src="https://bmc-cdn.nyc3.digitaloceanspaces.com/BMC-button-images/custom_images/orange_img.png" alt="Buy Me A Coffee" style="height: auto !important;width: auto !important;" ></a>
 
-- [MapStruct Doc - Maven Plugin](#mapstruct-doc---maven-plugin)
-  - [What is MapStruct Doc?](#what-is-mapstruct-doc)
-  - [Requirements](#requirements)
-  - [Using MapStruct Doc](#using-mapstruct-doc)
+- [What is MapStruct Doc?](#what-is-mapstruct-doc)
+- [Requirements](#requirements)
+- [Using MapStruct Doc](#using-mapstruct-doc)
     - [Maven](#maven)
-  - [Contributors](#contributors)
-  - [Licensing](#licensing)
+- [Contributors](#contributors)
+- [Licensing](#licensing)
 
 ---
 
@@ -42,6 +41,7 @@ For Maven-based projects, add the following to your POM file in order to use
 MapStruct Doc:
 
 ```xml
+
 <project>
   ...
   <properties>
@@ -84,10 +84,11 @@ mvn com.damienfremont.mapstruct:mapstruct-doc-maven-plugin:1.5.5-SNAPSHOT:genera
 
 ## Contributors
 
-![GitHub Contributors Image](https://contrib.rocks/image?repo=DamienFremont/mapstruct-doc-plugin)
+![GitHub Contributors Image](https://contrib.rocks/image?repo=DamienFremont/mapstruct-doc)
 
 ## Licensing
 
 Copyright (c) 2023 Damien FREMONT.
 
-Licensed under the Apache License version 2.0, available at http://www.apache.org/licenses/LICENSE-2.0
+Licensed under the Apache License version 2.0, available
+at http://www.apache.org/licenses/LICENSE-2.0
