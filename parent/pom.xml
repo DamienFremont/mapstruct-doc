@@ -22,8 +22,10 @@ Licensed under the Apache License version 2.0, available at http://www.apache.or
 
   <properties>
     <org.mapstruct.version>1.5.5.Final</org.mapstruct.version>
+    <!-- CI -->
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <maven.version>3.2.5</maven.version>
+    <!-- LANG -->
     <java.version>8</java.version>
     <lombok.version>1.18.28</lombok.version>
   </properties>
@@ -101,5 +103,39 @@ Licensed under the Apache License version 2.0, available at http://www.apache.or
       </plugin>
     </plugins>
   </build>
+
+  <profiles>
+    <profile>
+      <id>coverage</id>
+      <build>
+        <plugins>
+          <plugin>
+            <groupId>org.jacoco</groupId>
+            <artifactId>jacoco-maven-plugin</artifactId>
+            <version>0.8.7</version>
+            <executions>
+              <execution>
+                <id>prepare-agent</id>
+                <goals>
+                  <goal>prepare-agent</goal>
+                </goals>
+              </execution>
+              <execution>
+                <id>report</id>
+                <goals>
+                  <goal>report</goal>
+                </goals>
+                <configuration>
+                  <formats>
+                    <format>XML</format>
+                  </formats>
+                </configuration>
+              </execution>
+            </executions>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
+  </profiles>
 
 </project>
