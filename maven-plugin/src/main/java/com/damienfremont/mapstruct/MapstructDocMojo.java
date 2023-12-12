@@ -45,13 +45,13 @@ public class MapstructDocMojo extends AbstractMojo {
       MapstructDocParser p = new MapstructDocParser();
       ClassLoader cl = getClassLoader(project, this, logger);
 
-      Class c0 = cl.loadClass(include); // TODO: dynamic
+      Class<?> c0 = cl.loadClass(include); // TODO: dynamic
 
       for (MapperModel m : p.parse(c0)) {
         CsvFileBuilder.writeCsvFile(m, outputDirectory.toPath());
       }
     } catch (ClassNotFoundException e) {
-      throw new RuntimeException(e);
+      throw new IllegalArgumentException(e);
     }
   }
 }

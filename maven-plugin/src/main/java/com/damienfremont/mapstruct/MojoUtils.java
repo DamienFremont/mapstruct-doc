@@ -5,6 +5,7 @@
  */
 package com.damienfremont.mapstruct;
 
+import lombok.NoArgsConstructor;
 import org.apache.maven.plugin.AbstractMojo;
 import org.apache.maven.plugin.logging.Log;
 import org.apache.maven.project.MavenProject;
@@ -14,6 +15,9 @@ import java.net.URL;
 import java.net.URLClassLoader;
 import java.util.List;
 
+import static lombok.AccessLevel.PRIVATE;
+
+@NoArgsConstructor(access = PRIVATE)
 public class MojoUtils {
 
   /**
@@ -21,12 +25,12 @@ public class MojoUtils {
    */
   public static ClassLoader getClassLoader(MavenProject project, AbstractMojo thiz, Log log) {
     try {
-      List classpathElements = project.getCompileClasspathElements();
+      List<String> classpathElements = project.getCompileClasspathElements();
       classpathElements.add(project.getBuild().getOutputDirectory());
       classpathElements.add(project.getBuild().getTestOutputDirectory());
-      URL urls[] = new URL[classpathElements.size()];
+      URL[] urls = new URL[classpathElements.size()];
       for (int i = 0; i < classpathElements.size(); ++i) {
-        urls[i] = new File((String) classpathElements.get(i)).toURL();
+        urls[i] = new File(classpathElements.get(i)).toURI().toURL();
       }
       return new URLClassLoader(urls, thiz.getClass().getClassLoader());
     } catch (Exception e) {

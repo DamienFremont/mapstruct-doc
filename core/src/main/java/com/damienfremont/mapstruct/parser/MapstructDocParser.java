@@ -7,7 +7,6 @@ package com.damienfremont.mapstruct.parser;
 
 import com.damienfremont.mapstruct.model.MapperModel;
 import com.damienfremont.mapstruct.model.MappingModel;
-import org.mapstruct.Mapping;
 
 import java.lang.reflect.Method;
 import java.util.Arrays;
@@ -18,22 +17,21 @@ import static java.util.stream.Collectors.toList;
 
 public class MapstructDocParser {
 
-  public List<MapperModel> parse(Class include) {
+  public List<MapperModel> parse(Class<?> include) {
     try {
-
       MapperModel m0 = new MapperModel();
       m0.setName(include.getSimpleName());
       m0.setClazz(include);
       m0.setMappings(parseMethods(include.getMethods()));
       return Arrays.asList(m0);
     } catch (Exception e) {
-      throw new RuntimeException(e);
+      throw new IllegalArgumentException(e);
     }
   }
 
   List<MappingModel> parseMethods(Method[] methods) {
     return stream(methods)
-// FIXME:           .filter(this::hasMappingAnnotation)
+            .filter(this::hasMappingAnnotation)
             .map(this::toMappingModel)
             .collect(toList());
   }
@@ -43,9 +41,7 @@ public class MapstructDocParser {
   }
 
   boolean hasMappingAnnotation(Method m) {
-    return stream(m.getAnnotations())
-            .filter(a -> Mapping.class == a.getClass())
-            .findAny()
-            .isPresent();
+    return true;
+//    return stream(m.getAnnotations()).anyMatch(a -> Mapping.class == a.getClass()); // FIXME:
   }
 }

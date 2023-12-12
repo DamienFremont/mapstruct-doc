@@ -17,6 +17,6 @@ import java.util.List;
 @AllArgsConstructor
 public class MapperModel {
   String name;
-  Class clazz;
+  Class<?> clazz;
   List<MappingModel> mappings = new ArrayList<>();
 }

@@ -6,9 +6,9 @@
 package com.damienfremont.mapstruct.file;
 
 import com.damienfremont.mapstruct.model.MapperModel;
+import lombok.NoArgsConstructor;
 
 import java.io.IOException;
-import java.nio.charset.Charset;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -16,13 +16,14 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 import static java.lang.String.format;
+import static java.nio.charset.StandardCharsets.UTF_8;
 import static java.nio.file.StandardOpenOption.APPEND;
 import static java.nio.file.StandardOpenOption.WRITE;
 import static java.util.Arrays.asList;
+import static lombok.AccessLevel.PRIVATE;
 
+@NoArgsConstructor(access = PRIVATE)
 public class CsvFileBuilder {
-
-  static final Charset UTF_8 = Charset.forName("UTF-8");
 
   public static Path writeCsvFile(MapperModel model, Path dir) {
     Path file = createdFile(model.getName(), dir);
@@ -44,7 +45,7 @@ public class CsvFileBuilder {
       }
       return Files.createFile(file);
     } catch (IOException e) {
-      throw new RuntimeException(e);
+      throw new IllegalArgumentException(e);
     }
   }
 
@@ -62,7 +63,7 @@ public class CsvFileBuilder {
     try {
       Files.write(file, asList(line), UTF_8, WRITE, APPEND);
     } catch (IOException e) {
-      throw new RuntimeException(e);
+      throw new IllegalArgumentException(e);
     }
   }
 }
