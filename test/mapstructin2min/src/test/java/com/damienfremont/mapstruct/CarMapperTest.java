@@ -19,11 +19,11 @@ class CarMapperTest {
 
   @Test
   void shouldMapCarToDto() {
-    //given
+    // given
     Car car = new Car("Morris", 5, CarType.SEDAN);
-    //when
+    // when
     CarDto carDto = CarMapper.INSTANCE.carToCarDto(car);
-    //then
+    // then
     assertThat(carDto).isNotNull();
     assertThat(carDto.getMake()).isEqualTo("Morris");
     assertThat(carDto.getSeatCount()).isEqualTo(5);
