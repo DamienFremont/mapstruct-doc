@@ -58,7 +58,7 @@ Licensed under the Apache License version 2.0, available at http://www.apache.or
         <artifactId>mapstruct-doc-maven-plugin</artifactId>
         <version>${project.version}</version>
         <configuration>
-          <include>com.damienfremont.mapstruct.CarMapper</include>
+          <include>com.damienfremont.mapstruct.example.getstarted.CarMapper</include>
         </configuration>
         <executions>
           <execution>

@@ -18,7 +18,7 @@ class CsvFileBuilderTest {
                     get("target/classes/")))
             .exists()
             .hasSameTextualContentAs(
-                    get("src/test/resources/testdatas/CarMapper.csv"));
+                    get("src/test/resources/example/getstarted/CarMapper.csv"));
   }
 
   private MapperModel buildMapperModel() {

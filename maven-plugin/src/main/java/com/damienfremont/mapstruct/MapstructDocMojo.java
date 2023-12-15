@@ -5,9 +5,9 @@
  */
 package com.damienfremont.mapstruct;
 
+import com.damienfremont.mapstruct.parser.MapstructDocParser;
 import com.damienfremont.mapstruct.file.CsvFileBuilder;
 import com.damienfremont.mapstruct.model.MapperModel;
-import com.damienfremont.mapstruct.parser.MapstructDocParser;
 import org.apache.maven.plugin.AbstractMojo;
 import org.apache.maven.plugin.MojoExecutionException;
 import org.apache.maven.plugin.MojoFailureException;

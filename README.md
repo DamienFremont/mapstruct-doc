@@ -56,7 +56,7 @@ MapStruct Doc:
         <artifactId>mapstruct-doc-maven-plugin</artifactId>
         <version>${mapstruct-doc.version}</version>
         <configuration>
-          <include>com.damienfremont.mapstruct.CarMapper</include>
+          <include>com.damienfremont.mapstruct.example.getstarted.CarMapper</include>
         </configuration>
         <executions>
           <execution>

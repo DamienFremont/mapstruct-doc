@@ -3,11 +3,11 @@
  *
  * Licensed under the Apache License version 2.0, available at http://www.apache.org/licenses/LICENSE-2.0
  */
-package com.damienfremont.mapstruct;
+package com.damienfremont.mapstruct.example.getstarted;
 
-import com.damienfremont.mapstruct.source.Car;
-import com.damienfremont.mapstruct.source.CarType;
-import com.damienfremont.mapstruct.target.CarDto;
+import com.damienfremont.mapstruct.example.getstarted.source.Car;
+import com.damienfremont.mapstruct.example.getstarted.source.CarType;
+import com.damienfremont.mapstruct.example.getstarted.target.CarDto;
 import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
