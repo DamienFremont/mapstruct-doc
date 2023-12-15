@@ -25,7 +25,7 @@ class MapstructDocParserTest {
     assertEquals_MappingModel("carToCarDto", null, res0.getMappings().get(0));
   }
 
-  private void assertEquals_MappingModel(String carToCarDto, Short expected, MappingModel res0map0) {
+  private void assertEquals_MappingModel(String carToCarDto, String expected, MappingModel res0map0) {
     assertEquals(carToCarDto, res0map0.getSource());
     assertEquals(expected, res0map0.getTarget());
   }
