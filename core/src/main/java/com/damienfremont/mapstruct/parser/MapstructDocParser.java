@@ -42,6 +42,5 @@ public class MapstructDocParser {
 
   boolean hasMappingAnnotation(Method m) {
     return true;
-//    return stream(m.getAnnotations()).anyMatch(a -> Mapping.class == a.getClass()); // FIXME:
   }
 }
