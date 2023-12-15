@@ -12,6 +12,9 @@ import lombok.NoArgsConstructor;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * see org.mapstruct.Mapper
+ */
 @Data
 @NoArgsConstructor
 @AllArgsConstructor

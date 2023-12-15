@@ -16,6 +16,7 @@ class CsvFileBuilderTest {
             .writeCsvFile(
                     buildMapperModel(),
                     get("target/classes/")))
+            .exists()
             .hasSameTextualContentAs(
                     get("src/test/resources/testdatas/CarMapper.csv"));
   }
@@ -25,8 +26,8 @@ class CsvFileBuilderTest {
             "CarMapper",
             null,
             asList(
-                    new MappingModel("make,make", null),
-                    new MappingModel("numberOfSeats,seatCount", null),
-                    new MappingModel("type,type", null)));
+                    new MappingModel("make", "make"),
+                    new MappingModel("numberOfSeats", "seatCount"),
+                    new MappingModel("type", "type")));
   }
 }
