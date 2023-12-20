@@ -13,6 +13,7 @@ import org.objectweb.asm.tree.AnnotationNode;
 import org.objectweb.asm.tree.ClassNode;
 import org.objectweb.asm.tree.MethodNode;
 
+import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.lang.reflect.Field;
@@ -66,8 +67,14 @@ public class MapstructDocParser {
   List<MappingModel> parseAnnotatMappings(Method m0) throws IOException {
     List<MappingModel> res = new ArrayList<>();
     Class<Mapping> mappingClass = Mapping.class;
-    String name = "/" + m0.getDeclaringClass().getName().replaceAll("\\.", "/") + ".class";
-    InputStream in = MapstructDocParser.class.getResourceAsStream(name);
+    String name = m0.getDeclaringClass().getName().replaceAll("\\.", "/") + ".class";
+
+//    InputStream in = cl.getResourceAsStream(name);
+
+    String path = m0.getDeclaringClass().getProtectionDomain().getCodeSource().getLocation().getPath();
+    String name1 = path.substring(1) + name;
+    InputStream in = new FileInputStream(name1);
+
     ClassReader cr = new ClassReader(in);
     ClassNode classNode = new ClassNode();
     cr.accept(classNode, 0);
