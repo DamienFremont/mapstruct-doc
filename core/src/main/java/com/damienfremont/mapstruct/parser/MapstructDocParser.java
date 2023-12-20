@@ -22,6 +22,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
+import java.util.function.Predicate;
 import java.util.stream.Stream;
 
 import static java.util.Arrays.stream;
@@ -43,13 +44,12 @@ public class MapstructDocParser {
   }
 
   private List<MappingModel> parseMappings(Method m0) throws IOException {
-    List<MappingModel> moms = Stream
+    return Stream
             .concat(
                     parseDefaultMappings(m0).stream(),
                     parseAnnotatMappings(m0).stream())
             .sorted(Comparator.comparing(s -> s.getTarget().toLowerCase()))
             .collect(toList());
-    return moms;
   }
 
   List<MappingModel> parseDefaultMappings(Method method) {
@@ -59,7 +59,7 @@ public class MapstructDocParser {
     Field[] defSrcFs = defSrc.getDeclaredFields();
     return stream(defTgtFs)
             .filter(i -> sourceFieldExists(i, defSrcFs))
-            .map(i -> toMappingModel(i))
+            .map(this::toMappingModel)
             .collect(toList());
   }
 
@@ -67,21 +67,17 @@ public class MapstructDocParser {
   List<MappingModel> parseAnnotatMappings(Method m0) throws IOException {
     List<MappingModel> res = new ArrayList<>();
     Class<Mapping> mappingClass = Mapping.class;
-    String name = m0.getDeclaringClass().getName().replaceAll("\\.", "/") + ".class";
-
-//    InputStream in = cl.getResourceAsStream(name);
-
+    String name = m0.getDeclaringClass().getName().replace(".", "/") + ".class";
     String path = m0.getDeclaringClass().getProtectionDomain().getCodeSource().getLocation().getPath();
     String name1 = path.substring(1) + name;
     InputStream in = new FileInputStream(name1);
-
     ClassReader cr = new ClassReader(in);
     ClassNode classNode = new ClassNode();
     cr.accept(classNode, 0);
     for (MethodNode methodNode : classNode.methods) {
       if (methodNode.invisibleAnnotations != null) {
         for (AnnotationNode annotationNode : methodNode.invisibleAnnotations) {
-          if (annotationNode.desc.equals("L" + mappingClass.getName().replaceAll("\\.", "/") + ";")) {
+          if (annotationNode.desc.equals("L" + mappingClass.getName().replace(".", "/") + ";")) {
             String srcVal = annotationNode.values.get(1).toString();
             String tgtVal = annotationNode.values.get(3).toString();
             res.add(new MappingModel(srcVal, tgtVal));
@@ -93,26 +89,14 @@ public class MapstructDocParser {
   }
 
   boolean sourceFieldExists(Field field, Field[] defSrcFs) {
+    Predicate<Field> hasSameName = f -> f.getName().equals(field.getName());
+    Predicate<Field> ignoreJacocoData = f -> !f.isSynthetic();
     return stream(defSrcFs)
-            .filter(f -> hasSameName(f, field))
-            .filter(f -> ignoreJacocoData(f))
-            .findAny()
-            .isPresent();
+            .anyMatch(hasSameName
+                    .and(ignoreJacocoData));
   }
 
   MappingModel toMappingModel(Field f) {
     return new MappingModel(f.getName(), f.getName());
-  }
-
-  boolean hasSameName(Field f1, Field f2) {
-    return equals(f1.getName(), f2.getName());
-  }
-
-  boolean equals(String s1, String s2) {
-    return s1.equals(s2);
-  }
-
-  boolean ignoreJacocoData(Field f) {
-    return f.isSynthetic() == false;
   }
 }
