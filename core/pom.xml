@@ -28,6 +28,19 @@ Licensed under the Apache License version 2.0, available at http://www.apache.or
       <artifactId>mapstruct</artifactId>
       <version>${org.mapstruct.version}</version>
     </dependency>
+
+    <!-- ANNOTATIONS READER -->
+    <dependency>
+      <groupId>org.ow2.asm</groupId>
+      <artifactId>asm</artifactId>
+      <version>6.0</version>
+    </dependency>
+    <dependency>
+      <groupId>org.ow2.asm</groupId>
+      <artifactId>asm-util</artifactId>
+      <version>6.0</version>
+    </dependency>
+
   </dependencies>
 
 </project>
