@@ -92,18 +92,27 @@ public class MapstructDocParser {
     return res;
   }
 
-  static boolean sourceFieldExists(Field field, Field[] defSrcFs) {
+  boolean sourceFieldExists(Field field, Field[] defSrcFs) {
     return stream(defSrcFs)
-            .filter(f -> equals(f.getName(), field.getName()))
+            .filter(f -> hasSameName(f, field))
+            .filter(f -> ignoreJacocoData(f))
             .findAny()
             .isPresent();
   }
 
-  static MappingModel toMappingModel(Field f) {
+  MappingModel toMappingModel(Field f) {
     return new MappingModel(f.getName(), f.getName());
   }
 
-  static boolean equals(String s1, String s2) {
+  boolean hasSameName(Field f1, Field f2) {
+    return equals(f1.getName(), f2.getName());
+  }
+
+  boolean equals(String s1, String s2) {
     return s1.equals(s2);
+  }
+
+  boolean ignoreJacocoData(Field f) {
+    return f.isSynthetic() == false;
   }
 }
