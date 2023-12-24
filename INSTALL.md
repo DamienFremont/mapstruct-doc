@@ -45,7 +45,8 @@ TLDR / Summary :
 
 1. on Debian :
     1. $ `explorer.exe .`
-
+2. on Windows :
+    1. `cmd /c mklink /D "C:\Users\YourUsername\.config\nvim" "\\wsl$\Ubuntu\home\username\.config\nvim"`
 ---
 
 ## 3. Linux Dev on Windows with WSL and VS Code
