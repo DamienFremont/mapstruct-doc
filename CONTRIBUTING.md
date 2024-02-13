@@ -13,18 +13,26 @@ Please contact the [authors](mailto:damien.fremont@gmail.com).
 docker pull library/sonarqube:10.4.0-community
 docker pull sonarsource/sonar-scanner-cli:5.0.1
 docker run -d --name sonarqube -p 9000:9000 sonarqube
-# token
-# (http://localhost:9000 > sonar menu > 'my account' > 'security' > 'type:globa'l > 'generate' > copy token value)
+# security
+# (http://localhost:9000 > sonar menu > 'Administration' > 'Configuration' > 'Security' > 'Force user authentication':off)
 
 # usage: scan with docker
-docker run --name sonar-scanner-cli-mapstruct-doc --net=host -e SONAR_HOST_URL="http://localhost:9000" -e SONAR_SCANNER_OPTS="-Dsonar.projectKey=mapstruct-doc" -e SONAR_TOKEN="sqa_a629a1a3376ecad1f1f87ffc6473405379e64723" -v ".:/usr/src" sonarsource/sonar-scanner-cli
+docker run -it --rm --net=host -e SONAR_SCANNER_OPTS="-Dsonar.projectKey=mapstruct-doc" -v ".:/usr/src" sonarsource/sonar-scanner-cli
+
+# result
+# http://localhost:9000/dashboard?id=mapstruct-doc
 ```
 
+#### Debug
+
 ```powershell
-# or: scan with maven
+# security
+# (http://localhost:9000 > sonar menu > 'my account' > 'security' > 'type:globa'l > 'generate' > copy token value)
+
+# usage:scan with maven
 $Env:JAVA_HOME='C:\Program Files\Java\jdk-17.0.9+9\'
-$Env:Path = [System.Environment]::GetEnvironmentVariable("Path","Machine") + ";" + [System.Environment]::GetEnvironmentVariable("Path","User") 
-mvn clean verify sonar:sonar -Pcoverage -Dsonar.projectKey=mapstruct-doc -Dsonar.projectName='mapstruct-doc' -Dsonar.host.url=http://localhost:9000 -Dsonar.token=sqa_a629a1a3376ecad1f1f87ffc6473405379e64723
+$env:Path = [System.Environment]::GetEnvironmentVariable("Path","Machine") + ";" + [System.Environment]::GetEnvironmentVariable("Path","User")
+mvn clean verify sonar:sonar -Pcoverage -Dsonar.projectKey=mapstruct-doc -Dsonar.projectName='mapstruct-doc' -Dsonar.host.url=http://localhost:9000 -Dsonar.token=...
 ```
 
 ## Resources
