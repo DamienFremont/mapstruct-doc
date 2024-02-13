@@ -29,6 +29,20 @@ AsciiDoc).
 
 At compile time MapStruct will generate a file for each interface.
 
+### Features
+
+|      Feature      |              State | Note |
+| :---------------: | -----------------: | ---: |
+|   generate-csv    |     :construction: |      |
+|   generate-text   |                :x: |      |
+| generate-markdown |                :x: |      |
+|   generate-html   |                :x: |      |
+| generate-asciidoc |                :x: |      |
+|       maven       | :heavy_check_mark: |      |
+|    maven-site     |                :x: |      |
+|      gradle       |                :x: |      |
+|   scan-javadoc    |                :x: |      |
+
 ## Requirements
 
 MapStruct Doc requires Java 1.8 or later.
@@ -83,6 +97,8 @@ mvn com.damienfremont.mapstruct:mapstruct-doc-maven-plugin:1.5.5-SNAPSHOT:genera
 ```
 
 ## Contributors
+
+Want to contribute? [CONTRIBUTING.md](./CONTRIBUTING.md)
 
 ![GitHub Contributors Image](https://contrib.rocks/image?repo=DamienFremont/mapstruct-doc)
 
