@@ -2,12 +2,9 @@
 
 [![License](https://img.shields.io/badge/License-Apache%202.0-yellowgreen.svg)](https://github.com/DamienFremont/mapstruct-doc/blob/main/LICENSE)
 [![Follow](https://img.shields.io/twitter/follow/Damien_Fremont?style=social&logo=X)](https://twitter.com/intent/follow?screen_name=Damien_Fremont)
+[!["Buy Me A Coffee"](./documentation/buymeacoffee-20.png)](https://www.buymeacoffee.com/damienfremont)
 
 :warning: **WORK IN PROGRESS !!!**
-
-Liked some of my work? Buy me a coffee (or more likely a beer)
-
-<a href="https://www.buymeacoffee.com/damienfremont" target="_blank"><img src="https://bmc-cdn.nyc3.digitaloceanspaces.com/BMC-button-images/custom_images/orange_img.png" alt="Buy Me A Coffee" style="height: auto !important;width: auto !important;" ></a>
 
 - [What is MapStruct Doc?](#what-is-mapstruct-doc)
 - [Requirements](#requirements)
